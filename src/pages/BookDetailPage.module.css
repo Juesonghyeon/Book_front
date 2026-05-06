@@ -1,0 +1,498 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: #f9fafb;
+}
+
+/* ── 도서 정보 섹션 ── */
+.infoSection {
+  display: flex;
+  gap: 48px;
+  background: #ffffff;
+  padding: 48px 80px;
+}
+
+.coverWrapper {
+  width: 400px;
+  height: 500px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #dbeafe 0%, #93c5fd 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coverPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 0;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.metaLabel {
+  font-size: 14px;
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+  width: 48px;
+  flex-shrink: 0;
+}
+
+.metaValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  font-family: 'Inter', sans-serif;
+}
+
+.priceGroup {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.originalPriceWrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.originalPrice {
+  font-size: 20px;
+  font-weight: 400;
+  color: #9ca3af;
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+}
+
+.strikeLine {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: #9ca3af;
+  transform: translateY(-50%);
+}
+
+.salePrice {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2563eb;
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+}
+
+.btnRow {
+  display: flex;
+  gap: 12px;
+}
+
+.cartBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 200px;
+  padding: 14px 32px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: none;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cartBtn:hover {
+  background: #f9fafb;
+}
+
+.buyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.buyBtn:hover {
+  background: #1d4ed8;
+}
+
+/* ── 책 소개 섹션 ── */
+.descSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #ffffff;
+  padding: 48px 80px;
+  margin-top: 12px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sectionTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2937;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+.descText {
+  font-size: 15px;
+  font-weight: 400;
+  color: #4b5563;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── 광고 섹션 ── */
+.adSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #ffffff;
+  padding: 0 0 50px 0;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.adImageContainer {
+  width: 100%;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.adImage {
+  width: 100%;
+  display: block;
+}
+
+/* contents 없을 때 fallback 프로모션 배너 */
+.adBanner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #f3f4f6 0%, #e5e7eb 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.adEmoji {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.adSummer {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1f2937;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 4px;
+}
+
+.adBookSale {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2563eb;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 2px;
+}
+
+.adDivider {
+  width: 40px;
+  height: 2px;
+  background: #d1d5db;
+  flex-shrink: 0;
+}
+
+.adUpTo {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+}
+
+.adPercent {
+  font-size: 28px;
+  font-weight: 900;
+  color: #1f2937;
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+}
+
+.adOff {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2563eb;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 3px;
+}
+
+.adCat {
+  font-size: 11px;
+  font-weight: 500;
+  color: #4b5563;
+  font-family: 'Inter', sans-serif;
+}
+
+.adPeriod {
+  font-size: 9px;
+  font-weight: 500;
+  color: #9ca3af;
+  font-family: 'Inter', sans-serif;
+}
+
+.adMoreBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 272px;
+  padding: 16px 0;
+  border: 1px solid #3b82f6;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #3b82f6;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.adMoreBtn:hover {
+  background: #eff6ff;
+}
+
+/* ── 리뷰 섹션 ── */
+.reviewSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #ffffff;
+  padding: 48px 80px;
+  margin-top: 12px;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reviewHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewCount {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+}
+
+.emptyReview {
+  font-size: 15px;
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+  padding: 32px 0;
+  text-align: center;
+  margin: 0;
+}
+
+.reviewList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.reviewTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reviewLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.reviewAuthor {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  font-family: 'Inter', sans-serif;
+}
+
+.reviewDate {
+  font-size: 13px;
+  font-weight: 400;
+  color: #9ca3af;
+  font-family: 'Inter', sans-serif;
+}
+
+.reviewText {
+  font-size: 15px;
+  font-weight: 400;
+  color: #4b5563;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── 페이지네이션 ── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding-top: 24px;
+}
+
+.pageBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: none;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pageBtn:disabled {
+  color: #d1d5db;
+  cursor: default;
+}
+
+.pageBtn:not(:disabled):hover {
+  background: #f3f4f6;
+}
+
+.pageBtnActive {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.pageBtnActive:hover {
+  background: #1d4ed8 !important;
+}
+
+/* ── 공통 ── */
+.loading {
+  text-align: center;
+  padding: 48px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.error {
+  text-align: center;
+  padding: 48px;
+  color: #ef4444;
+  font-size: 16px;
+}

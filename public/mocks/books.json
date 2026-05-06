@@ -1,0 +1,64 @@
+{
+  "bestseller": {
+    "code": 200,
+    "data": [
+      { "id": "BOOK001", "title": "클라우드 아틀라스", "subtitle": "미래와 과거를 넘나드는 서사", "author": "데이비드 미첼", "price": 16800, "publishDate": "2022-03-15", "imageUrl": "" },
+      { "id": "BOOK002", "title": "작별인사", "subtitle": "우리가 나눈 마지막 인사", "author": "김영하", "price": 14400, "publishDate": "2022-06-01", "imageUrl": "" },
+      { "id": "BOOK003", "title": "불편한 편의점", "subtitle": "마음이 따뜻해지는 이야기", "author": "김호연", "price": 13500, "publishDate": "2021-04-20", "imageUrl": "" },
+      { "id": "BOOK004", "title": "달러구트 꿈 백화점", "subtitle": "잠든 사이 꿈을 사고 파는 곳", "author": "이미예", "price": 13800, "publishDate": "2020-07-08", "imageUrl": "" },
+      { "id": "BOOK005", "title": "파친코", "subtitle": "한 가족의 기나긴 여정", "author": "이민진", "price": 16200, "publishDate": "2022-01-10", "imageUrl": "" },
+      { "id": "BOOK006", "title": "모순", "subtitle": "나는 누구인가", "author": "양귀자", "price": 14000, "publishDate": "2023-05-17", "imageUrl": "" },
+      { "id": "BOOK007", "title": "트렌드 코리아 2026", "subtitle": "2026년을 읽는 키워드", "author": "김난도", "price": 19800, "publishDate": "2025-10-01", "imageUrl": "" },
+      { "id": "BOOK008", "title": "역행자", "subtitle": "성공을 역설하다", "author": "자청", "price": 17500, "publishDate": "2022-08-01", "imageUrl": "" },
+      { "id": "BOOK009", "title": "아버지의 해방일지", "subtitle": "해방의 의미를 묻다", "author": "정지아", "price": 15300, "publishDate": "2023-02-14", "imageUrl": "" },
+      { "id": "BOOK010", "title": "지구 끝의 온실", "subtitle": "멸망 이후의 세계", "author": "김초엽", "price": 14800, "publishDate": "2021-06-25", "imageUrl": "" }
+    ],
+    "pageInfo": { "nowPageNum": 0, "totalRows": 10 }
+  },
+  "new": {
+    "code": 200,
+    "data": [
+      { "id": "BOOK011", "title": "스프링 부트 3 핵심 가이드", "subtitle": "스프링 부트 3을 활용한 애플리케이션 개발 실무", "author": "장정우", "price": 28800, "publishDate": "2024-09-30", "imageUrl": "https://image.aladin.co.kr/product/36096/9/cover200/k052038969_1.jpg" },
+      { "id": "BOOK012", "title": "혼자 공부하는 파이썬", "subtitle": "프로그래밍 첫걸음", "author": "윤인성", "price": 24000, "publishDate": "2024-11-01", "imageUrl": "" },
+      { "id": "BOOK013", "title": "리액트를 다루는 기술", "subtitle": "최신 리액트 완벽 가이드", "author": "김민준", "price": 36000, "publishDate": "2024-08-20", "imageUrl": "" },
+      { "id": "BOOK014", "title": "도커 & 쿠버네티스 입문", "subtitle": "컨테이너 기반 서비스 운영", "author": "조훈", "price": 32000, "publishDate": "2024-10-15", "imageUrl": "" },
+      { "id": "BOOK015", "title": "코틀린 완벽 가이드", "subtitle": "JVM 언어의 새 표준", "author": "로만 엘리자로프", "price": 45000, "publishDate": "2024-07-01", "imageUrl": "" }
+    ],
+    "pageInfo": { "nowPageNum": 0, "totalRows": 5 }
+  },
+  "basic": {
+    "code": 200,
+    "data": [
+      { "id": "BOOK021", "title": "Clean Code", "subtitle": "읽기 좋은 코드를 작성하는 기술", "author": "로버트 C. 마틴", "price": 33000, "publishDate": "2013-12-24", "imageUrl": "" },
+      { "id": "BOOK022", "title": "자바의 정석", "subtitle": "Java의 모든 것", "author": "남궁성", "price": 30000, "publishDate": "2016-01-27", "imageUrl": "" },
+      { "id": "BOOK023", "title": "Head First Design Patterns", "subtitle": "패턴으로 디자인하라", "author": "에릭 프리먼", "price": 36000, "publishDate": "2022-11-01", "imageUrl": "" },
+      { "id": "BOOK024", "title": "운영체제 아주 쉬운 세 가지 이야기", "subtitle": "OS 핵심 개념 완전 정복", "author": "레밍지 아르파치-듀소", "price": 38000, "publishDate": "2020-08-01", "imageUrl": "" },
+      { "id": "BOOK025", "title": "컴퓨터 구조와 설계", "subtitle": "하드웨어와 소프트웨어의 인터페이스", "author": "데이비드 패터슨", "price": 35000, "publishDate": "2021-03-15", "imageUrl": "" },
+      { "id": "BOOK026", "title": "알고리즘 문제 풀이 전략", "subtitle": "코딩 테스트 완벽 대비", "author": "구종만", "price": 48000, "publishDate": "2012-09-01", "imageUrl": "" },
+      { "id": "BOOK027", "title": "데이터베이스 개론", "subtitle": "기초부터 실무까지", "author": "김연희", "price": 28000, "publishDate": "2023-01-05", "imageUrl": "" }
+    ],
+    "pageInfo": { "nowPageNum": 0, "totalRows": 7 }
+  },
+  "mobile": {
+    "code": 200,
+    "data": [
+      { "id": "BOOK031", "title": "Flutter 완벽 가이드", "subtitle": "크로스 플랫폼 앱 개발", "author": "Felix Angelov", "price": 40000, "publishDate": "2024-03-10", "imageUrl": "" },
+      { "id": "BOOK032", "title": "안드로이드 프로그래밍", "subtitle": "Android 14 완전 정복", "author": "빌 필립스", "price": 35000, "publishDate": "2024-01-20", "imageUrl": "" },
+      { "id": "BOOK033", "title": "iOS 앱 프로그래밍", "subtitle": "Swift로 만드는 앱", "author": "최원영", "price": 38000, "publishDate": "2023-11-01", "imageUrl": "" },
+      { "id": "BOOK034", "title": "React Native 실전 앱 개발", "subtitle": "하나의 코드로 두 플랫폼을", "author": "이성용", "price": 34000, "publishDate": "2024-05-15", "imageUrl": "" }
+    ],
+    "pageInfo": { "nowPageNum": 0, "totalRows": 4 }
+  },
+  "web": {
+    "code": 200,
+    "data": [
+      { "id": "BOOK041", "title": "모던 자바스크립트 Deep Dive", "subtitle": "자바스크립트의 기본 개념과 동작 원리", "author": "이웅모", "price": 44000, "publishDate": "2020-09-25", "imageUrl": "" },
+      { "id": "BOOK042", "title": "리액트를 다루는 기술", "subtitle": "기초부터 서버사이드 렌더링까지", "author": "김민준", "price": 42000, "publishDate": "2022-08-01", "imageUrl": "" },
+      { "id": "BOOK043", "title": "Vue.js 완벽 가이드", "subtitle": "실전 프로젝트로 배우는 Vue 3", "author": "김정식", "price": 32000, "publishDate": "2023-04-01", "imageUrl": "" },
+      { "id": "BOOK044", "title": "Node.js 교과서", "subtitle": "기본기에 충실한 노드 입문서", "author": "조현영", "price": 36000, "publishDate": "2024-02-01", "imageUrl": "" },
+      { "id": "BOOK045", "title": "HTTP 완벽 가이드", "subtitle": "웹은 어떻게 동작하는가", "author": "데이빗 고울리", "price": 48000, "publishDate": "2014-12-20", "imageUrl": "" },
+      { "id": "BOOK046", "title": "TypeScript 교과서", "subtitle": "타입스크립트 완전 정복", "author": "조현영", "price": 36000, "publishDate": "2023-09-01", "imageUrl": "" }
+    ],
+    "pageInfo": { "nowPageNum": 0, "totalRows": 6 }
+  }
+}

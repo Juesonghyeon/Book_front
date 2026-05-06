@@ -1,0 +1,26 @@
+{
+  "code": 200,
+  "data": {
+    "bestTopN": [
+      { "id": "BOOK001", "title": "클라우드 아틀라스", "author": "데이비드 미첼", "price": 16800, "imageUrl": "" },
+      { "id": "BOOK002", "title": "작별인사", "author": "김영하", "price": 14400, "imageUrl": "" },
+      { "id": "BOOK003", "title": "불편한 편의점", "author": "김호연", "price": 13500, "imageUrl": "" },
+      { "id": "BOOK004", "title": "달러구트 꿈 백화점", "author": "이미예", "price": 13800, "imageUrl": "" },
+      { "id": "BOOK005", "title": "파친코", "author": "이민진", "price": 16200, "imageUrl": "" }
+    ],
+    "newTopN": [
+      { "id": "BOOK006", "title": "모순", "author": "양귀자", "price": 14000, "imageUrl": "" },
+      { "id": "BOOK007", "title": "트렌드 코리아 2026", "author": "김난도", "price": 19800, "imageUrl": "" },
+      { "id": "BOOK008", "title": "역행자", "author": "자청", "price": 17500, "imageUrl": "" },
+      { "id": "BOOK009", "title": "아버지의 해방일지", "author": "정지아", "price": 15300, "imageUrl": "" },
+      { "id": "BOOK010", "title": "지구 끝의 온실", "author": "김초엽", "price": 14800, "imageUrl": "" }
+    ],
+    "basicTopN": [
+      { "id": "BOOK021", "title": "Clean Code", "author": "로버트 C. 마틴", "price": 33000, "imageUrl": "" },
+      { "id": "BOOK022", "title": "자바의 정석", "author": "남궁성", "price": 30000, "imageUrl": "" },
+      { "id": "BOOK023", "title": "Head First Design Patterns", "author": "에릭 프리먼", "price": 36000, "imageUrl": "" },
+      { "id": "BOOK024", "title": "운영체제 아주 쉬운 세 가지 이야기", "author": "레밍지 아르파치-듀소", "price": 38000, "imageUrl": "" },
+      { "id": "BOOK025", "title": "컴퓨터 구조와 설계", "author": "데이비드 패터슨", "price": 35000, "imageUrl": "" }
+    ]
+  }
+}
