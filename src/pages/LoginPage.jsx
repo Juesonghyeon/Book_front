@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import styles from './LoginPage.module.css'
 import { login } from '../services/authService'
 import useAuthStore from '../stores/authStore'
@@ -8,6 +8,7 @@ export default function LoginPage() {
   const [form, setForm] = useState({ userId: '', passwd: '' })
   const [errorMsg, setErrorMsg] = useState('')
   const navigate = useNavigate()
+  const location = useLocation()
   const setAuth = useAuthStore((state) => state.setAuth)
 
   const handleChange = (e) => {
@@ -20,7 +21,8 @@ export default function LoginPage() {
     try {
       const data = await login(form.userId, form.passwd)
       setAuth(data)
-      navigate('/')
+      const from = location.state?.from
+      navigate(from ? from.pathname : '/', { state: from?.state, replace: true })
     } catch (err) {
       const message =
         err.response?.data?.message || err.response?.data || '로그인에 실패했습니다. 아이디와 비밀번호를 확인해주세요.'

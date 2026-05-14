@@ -1,0 +1,611 @@
+/* ─────────────────────────────────────
+   페이지 래퍼
+───────────────────────────────────── */
+.page {
+  min-height: 100vh;
+  background: #F5F5F8;
+}
+
+/* ─────────────────────────────────────
+   스텝 인디케이터
+───────────────────────────────────── */
+.stepBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 56px;
+  background: #F8FAFF;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stepCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.stepDone    { background: #22C55E; color: #FFFFFF; }
+.stepActive  { background: #2563EB; color: #FFFFFF; }
+.stepPending { background: #E5E7EB; color: #9CA3AF; }
+
+.stepLabel {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stepLabelDone    { color: #22C55E; }
+.stepLabelActive  { color: #2563EB; font-weight: 700; }
+.stepLabelPending { color: #9CA3AF; font-weight: 500; }
+
+.stepLine {
+  width: 40px;
+  height: 2px;
+  background: #D1D5DB;
+}
+
+/* ─────────────────────────────────────
+   2컬럼 본문
+───────────────────────────────────── */
+.body {
+  display: flex;
+  gap: 32px;
+  padding: 32px 40px 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.leftCol {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rightCol {
+  width: 380px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─────────────────────────────────────
+   공통 카드
+───────────────────────────────────── */
+.card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0 0 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+/* ─────────────────────────────────────
+   배송지 정보 폼
+───────────────────────────────────── */
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #555555;
+}
+
+.input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  background: #F8F8F8;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.input::placeholder {
+  color: #AAAAAA;
+}
+
+.input:focus {
+  border-color: #2563EB;
+  background: #FFFFFF;
+}
+
+.input[readonly] {
+  cursor: default;
+  color: #6B7280;
+}
+
+.addressRow {
+  display: flex;
+  gap: 10px;
+}
+
+.addressInput {
+  flex: 1;
+}
+
+.addressBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100px;
+  height: 46px;
+  background: #1F2937;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.addressBtn:hover {
+  background: #111827;
+}
+
+/* ─────────────────────────────────────
+   주문 상품 목록
+───────────────────────────────────── */
+.bookList {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookItem {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.bookItem + .bookItem {
+  border-top: 1px solid #F0F0F0;
+}
+
+.bookImg {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  border: 1px solid #E5E7EB;
+}
+
+.bookInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bookTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1F2937;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.bookPriceRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.originalPrice {
+  font-size: 13px;
+  color: #9CA3AF;
+  text-decoration: line-through;
+}
+
+.salePrice {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2563EB;
+}
+
+/* ─────────────────────────────────────
+   수량 컨트롤 · 삭제
+───────────────────────────────────── */
+/* 상품 헤더 (제목 + 삭제 버튼) */
+.bookHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.removeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  color: #9CA3AF;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.removeBtn:hover:not(:disabled) {
+  background: #FEF2F2;
+  border-color: #FECACA;
+  color: #EF4444;
+}
+
+.removeBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* 수량 컨트롤 */
+.qtyControl {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: fit-content;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.qtyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #F8F8F8;
+  border: none;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.qtyBtn:hover:not(:disabled) {
+  background: #E5E7EB;
+}
+
+.qtyBtn:disabled {
+  color: #D1D5DB;
+  cursor: not-allowed;
+}
+
+.qtyValue {
+  min-width: 36px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  background: #FFFFFF;
+  padding: 0 4px;
+  line-height: 32px;
+  border-left: 1px solid #E0E0E0;
+  border-right: 1px solid #E0E0E0;
+}
+
+/* ─────────────────────────────────────
+   포인트 사용
+───────────────────────────────────── */
+.pointsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.pointsHeader .cardTitle {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.ownedPoints {
+  font-size: 13px;
+  color: #6B7280;
+}
+
+.ownedPoints strong {
+  color: #2563EB;
+  font-weight: 700;
+}
+
+.pointsQuickBtns {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.pointsQuickBtn {
+  flex: 1;
+  height: 36px;
+  background: #F0F4FF;
+  border: 1px solid #BFDBFE;
+  border-radius: 8px;
+  color: #2563EB;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.pointsQuickBtn:hover {
+  background: #DBEAFE;
+  border-color: #93C5FD;
+}
+
+.pointsInputError {
+  border-color: #EF4444 !important;
+  background: #FFF5F5 !important;
+}
+
+.pointsWarning {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #EF4444;
+  font-weight: 500;
+}
+
+.pointsRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.pointsInput {
+  flex: 1;
+  height: 46px;
+  padding: 0 14px;
+  background: #F8F8F8;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  box-sizing: border-box;
+  text-align: right;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.pointsInput::placeholder {
+  color: #AAAAAA;
+  text-align: left;
+}
+
+.pointsInput:focus {
+  border-color: #2563EB;
+  background: #FFFFFF;
+}
+
+.pointsAllBtn {
+  height: 46px;
+  padding: 0 16px;
+  background: #333333;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.pointsAllBtn:hover {
+  background: #111827;
+}
+
+/* ─────────────────────────────────────
+   주문 요약 카드
+───────────────────────────────────── */
+.summaryCard {
+  background: #F8FAFF;
+  border: 1px solid #DBEAFE;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.summaryTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.priceList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priceLabel {
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.priceValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1F2937;
+}
+
+.freeShipping {
+  color: #2563EB;
+  font-weight: 700;
+}
+
+.discountValue {
+  color: #EF4444;
+  font-weight: 600;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #EEEEEE;
+  margin: 0;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.totalLabel {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.totalValue {
+  font-size: 24px;
+  font-weight: 800;
+  color: #2563EB;
+}
+
+/* ─────────────────────────────────────
+   결제하기 버튼
+───────────────────────────────────── */
+.payBtn {
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.payBtn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.payBtn:active {
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────
+   로딩 / 에러
+───────────────────────────────────── */
+.loading,
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.error {
+  color: #EF4444;
+}
+
+/* ─────────────────────────────────────
+   반응형
+───────────────────────────────────── */
+@media (max-width: 1024px) {
+  .body {
+    flex-direction: column;
+    padding: 24px 24px 48px;
+    gap: 16px;
+  }
+
+  .rightCol {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .body {
+    padding: 16px 16px 40px;
+  }
+
+  .stepBar {
+    gap: 12px;
+  }
+
+  .stepLine {
+    width: 24px;
+  }
+
+  .stepLabel {
+    font-size: 12px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .totalValue {
+    font-size: 20px;
+  }
+
+  .payBtn {
+    height: 52px;
+    font-size: 16px;
+  }
+}

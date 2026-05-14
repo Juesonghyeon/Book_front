@@ -9,6 +9,7 @@ const useAuthStore = create(
       tokenType: null,
       userId: null,
       name: null,
+      point: 0,
 
       setAuth: (authData) =>
         set((state) => {
@@ -16,6 +17,7 @@ const useAuthStore = create(
           state.tokenType = authData.tokenType
           state.userId = authData.userId
           state.name = authData.name
+          state.point = authData.point ?? 0
         }),
 
       clearAuth: () =>
@@ -24,6 +26,7 @@ const useAuthStore = create(
           state.tokenType = null
           state.userId = null
           state.name = null
+          state.point = 0
         }),
     })),
     { name: 'auth-storage' }

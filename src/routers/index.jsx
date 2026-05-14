@@ -3,28 +3,48 @@ import Layout from '../pages/Layout'
 import MainPage from '../pages/MainPage'
 import BooksPage from '../pages/BooksPage'
 import BookDetailPage from '../pages/BookDetailPage'
+import OrderPage from '../pages/OrderPage'
+import CartPage from '../pages/CartPage'
+import PaymentSuccessPage from '../pages/PaymentSuccessPage'
+import PaymentFailPage from '../pages/PaymentFailPage'
 import LoginPage from '../pages/LoginPage'
 import PrivateRoute from '../components/PrivateRoute'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <PrivateRoute />,
+    element: <Layout />,
     children: [
       {
-        element: <Layout />,
+        index: true,
+        element: <MainPage />,
+      },
+      {
+        path: 'book/:category',
+        element: <BooksPage />,
+      },
+      {
+        path: 'books/:bookId',
+        element: <BookDetailPage />,
+      },
+      {
+        element: <PrivateRoute />,
         children: [
           {
-            index: true,
-            element: <MainPage />,
+            path: 'order',
+            element: <OrderPage />,
           },
           {
-            path: 'book/:category',
-            element: <BooksPage />,
+            path: 'cart',
+            element: <CartPage />,
           },
           {
-            path: 'books/:bookId',
-            element: <BookDetailPage />,
+            path: 'payment/success',
+            element: <PaymentSuccessPage />,
+          },
+          {
+            path: 'payment/fail',
+            element: <PaymentFailPage />,
           },
         ],
       },

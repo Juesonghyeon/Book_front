@@ -37,7 +37,7 @@ export default function MainPage() {
 
   useEffect(() => {
     getTopNBooks()
-      .then((res) => setBooks(res.data))
+      .then((res) => setBooks(res?.data ?? res))
       .catch(() => setError('데이터를 불러오는데 실패했습니다.'))
       .finally(() => setLoading(false))
   }, [])
@@ -60,8 +60,8 @@ export default function MainPage() {
             </button>
           </div>
           <div className={styles.booksRow}>
-            {books[key].map((book, index) => (
-              <BookCard key={book.bookId} book={book} index={index} variant={variant} />
+            {(books[key] ?? []).map((book, index) => (
+              <BookCard key={book.id ?? book.bookId} book={book} index={index} variant={variant} />
             ))}
           </div>
         </section>

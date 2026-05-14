@@ -1,4 +1,5 @@
 import axios from 'axios'
+import useAuthStore from '../stores/authStore'
 
 const axiosInstance = axios.create({
   baseURL: '/api/v1',
@@ -9,6 +10,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
+    if (config.url === '/login') return config
     const raw = localStorage.getItem('auth-storage')
     if (raw) {
       try {
@@ -27,7 +29,13 @@ axiosInstance.interceptors.request.use(
 
 axiosInstance.interceptors.response.use(
   (response) => response,
-  (error) => Promise.reject(error)
+  (error) => {
+    if (error.response?.status === 401 && error.config?.url !== '/login') {
+      useAuthStore.getState().clearAuth()
+      window.location.href = '/login'
+    }
+    return Promise.reject(error)
+  }
 )
 
 export default axiosInstance

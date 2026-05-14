@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import {
   BookOpen, FileText, MessageSquare,
   ShoppingCart, ChevronDown, ChevronLeft, ChevronRight,
   User, Star,
 } from 'lucide-react'
 import { getBookById } from '../services/bookService'
+import { addToCart } from '../services/cartService'
+import useAuthStore from '../stores/authStore'
 import styles from './BookDetailPage.module.css'
 
 const PAGE_SIZE = 10
@@ -46,6 +48,9 @@ function ReviewItem({ review }) {
 
 export default function BookDetailPage() {
   const { bookId } = useParams()
+  const navigate = useNavigate()
+  const location = useLocation()
+  const accessToken = useAuthStore((state) => state.accessToken)
   const [book, setBook] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -67,6 +72,41 @@ export default function BookDetailPage() {
       .catch(() => setError('도서 정보를 불러오는데 실패했습니다.'))
       .finally(() => setLoading(false))
   }, [bookId])
+
+  // 비로그인 후 로그인 복귀 시 pending 장바구니 자동 실행
+  useEffect(() => {
+    if (!accessToken) return
+    const raw = localStorage.getItem('pending-cart')
+    if (!raw) return
+    let pending
+    try { pending = JSON.parse(raw) } catch { localStorage.removeItem('pending-cart'); return }
+    if (pending.bookId !== bookId) return
+    localStorage.removeItem('pending-cart')
+    addToCart(pending.bookId, pending.quantity)
+      .then(() => {
+        const go = window.confirm('장바구니에 등록되었습니다. 장바구니로 이동하시겠습니까?')
+        if (go) navigate('/cart')
+      })
+      .catch(() => alert('장바구니 등록에 실패했습니다.'))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bookId, accessToken])
+
+  const handleCartClick = async () => {
+    if (!accessToken) {
+      const confirmed = window.confirm('해당기능은 로그인이 필요합니다. 로그인하시겠습니까?')
+      if (!confirmed) return
+      localStorage.setItem('pending-cart', JSON.stringify({ bookId, quantity: 1 }))
+      navigate('/login', { state: { from: location } })
+      return
+    }
+    try {
+      await addToCart(bookId, 1)
+      const go = window.confirm('장바구니에 등록되었습니다. 장바구니로 이동하시겠습니까?')
+      if (go) navigate('/cart')
+    } catch {
+      alert('장바구니 등록에 실패했습니다.')
+    }
+  }
 
   if (loading) return <div className={styles.loading}>로딩 중...</div>
   if (error) return <div className={styles.error}>{error}</div>
@@ -123,11 +163,16 @@ export default function BookDetailPage() {
           </div>
 
           <div className={styles.btnRow}>
-            <button className={styles.cartBtn}>
+            <button className={styles.cartBtn} onClick={handleCartClick}>
               <ShoppingCart size={18} />
               장바구니
             </button>
-            <button className={styles.buyBtn}>바로구매</button>
+            <button
+              className={styles.buyBtn}
+              onClick={() => navigate('/order', { state: { books: [{ bookId, quantity: 1 }] } })}
+            >
+              바로구매
+            </button>
           </div>
         </div>
       </section>

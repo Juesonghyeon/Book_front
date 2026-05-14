@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import {
   BookOpen, Search, ShoppingCart,
   ChevronDown, ChevronLeft, ChevronRight,
@@ -27,6 +27,7 @@ const SIZE_OPTIONS = [10, 20, 30]
 
 export default function BooksPage() {
   const { category } = useParams()
+  const navigate = useNavigate()
   const [books, setBooks] = useState([])
   const [pageInfo, setPageInfo] = useState({ nowPageNum: 0, totalRows: 0 })
   const [page, setPage] = useState(0)
@@ -139,7 +140,15 @@ export default function BooksPage() {
                     </div>
                   </div>
                   <div className={styles.rowBtns}>
-                    <button className={styles.orderBtn}>주문하기</button>
+                    <button
+                      className={styles.orderBtn}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        navigate('/order', { state: { books: [{ bookId: book.id, quantity: 1 }] } })
+                      }}
+                    >
+                      주문하기
+                    </button>
                     <button className={styles.cartBtn}>
                       <ShoppingCart size={14} color="#374151" />
                       장바구니
